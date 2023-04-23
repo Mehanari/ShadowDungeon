@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FootprintSpawner : MonoBehaviour
@@ -11,9 +12,27 @@ public class FootprintSpawner : MonoBehaviour
     [SerializeField] private float _spawnHeight;
     [SerializeField] private int _footprintsCount;
     [SerializeField] private float _angleRange;
-    bool _isRight;
+    [SerializeField] private float _spawnPeriod;
+    [SerializeField] bool _isRight;
     private Queue<GameObject> _footprintsQueue = new Queue<GameObject>();
-    
+    private float _elapsedDistance;
+    private Vector2 _previousPosition = Vector2.zero;
+
+
+    private void Update()
+    {
+        Vector2 currentPosition = new Vector2(transform.position.x, transform.position.z);
+        float distance = (currentPosition - _previousPosition).magnitude;
+        Vector2 direction = currentPosition - _previousPosition;
+        _elapsedDistance += distance;
+        if (_elapsedDistance >= _spawnPeriod)
+        {
+            _elapsedDistance = 0f;
+            SpawnFootprint(direction);
+        }
+        _previousPosition = currentPosition;
+    }
+
 
     private void Start()
     {
@@ -35,6 +54,7 @@ public class FootprintSpawner : MonoBehaviour
 
     private void PlaceFootprint(GameObject footprint, Vector2 movementDirection)
     {
+        NormalizeFootprintScale(footprint);
         Vector3 position;
         if (_isRight)
         {
@@ -55,6 +75,13 @@ public class FootprintSpawner : MonoBehaviour
         rotation.y += Random.Range(-_angleRange / 2, _angleRange / 2);
         footprint.transform.eulerAngles = rotation;
         _isRight = !_isRight;
+    }
+
+    private void NormalizeFootprintScale(GameObject footprint)
+    {
+        var scale = footprint.transform.localScale;
+        scale.x = 1;
+        footprint.transform.localScale = scale;
     }
 
 }

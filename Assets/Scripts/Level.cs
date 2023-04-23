@@ -1,7 +1,7 @@
 using UnityEditor.AI;
 using UnityEngine;
 
-public class LevelGenerator : MonoBehaviour
+public class Level : MonoBehaviour
 {
     [SerializeField] private RoomsConfig _roomsConfig;
     [SerializeField] private float _roomLength;
@@ -9,7 +9,26 @@ public class LevelGenerator : MonoBehaviour
     private Vector3[,] _roomsPositions;
     private Room[,] _rooms;
 
+    public static Level Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     private void Start()
+    {
+        GenerateLevel();
+    }
+
+    private void GenerateLevel()
     {
         GeneratePositions();
         CreateRooms();
@@ -17,6 +36,7 @@ public class LevelGenerator : MonoBehaviour
         CreateDoors();
         CreateVerticalWalls();
         CreateHorizontalWalls();
+        NavMeshBuilder.ClearAllNavMeshes();
         NavMeshBuilder.BuildNavMesh();
     }
 
