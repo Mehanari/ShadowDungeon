@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299a39fdcc4c70f4fb57fb3c0d7c1dcf, type: 3}
   m_Name: RoomsConfig
   m_EditorClassIdentifier: 
-  Rooms: []
-  StartRoom: {fileID: 0}
-  EndRoom: {fileID: 0}
+  Rooms:
+  - {fileID: 3410541256528102426, guid: 5e0fa6c3a92aeb9499cd8ebdc36cdeb4, type: 3}
+  - {fileID: 9199944953605750311, guid: dc89c91056598e24da2267b100c0c5e9, type: 3}
+  - {fileID: 1075825501150440244, guid: 48c9ed1eb39bdb54a949ba7ae5227c49, type: 3}
+  - {fileID: 2164081786933048455, guid: 05ec47737b73df240938501ee15b4376, type: 3}
+  - {fileID: 7846575197518115363, guid: 130758d116ebb08479e911af65c19f6c, type: 3}
+  - {fileID: 5730608911234025270, guid: 5449f53f07644e148a1b0097a0abcdef, type: 3}
+  - {fileID: 5713679599273756063, guid: 09beca2a12d844740ab3920a42623fde, type: 3}
+  StartRoom: {fileID: 8365571644286914459, guid: f943a35185313c34ab08fdf6b875c11d, type: 3}
+  EndRoom: {fileID: 4152409127384634768, guid: 332d1fc4926519c42a6c768100a653b8, type: 3}
