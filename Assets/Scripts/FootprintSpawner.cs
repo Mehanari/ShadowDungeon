@@ -7,6 +7,7 @@ public class FootprintSpawner : MonoBehaviour
     [SerializeField] private Transform _leftFoot;
     [SerializeField] private Transform _rightFoot;
     [SerializeField] private Transform _body;
+    [SerializeField] private Transform _feetHolder;
     [SerializeField] private float _spawnHeight;
     [SerializeField] private int _footprintsCount;
     [SerializeField] private float _angleRange;
@@ -42,11 +43,15 @@ public class FootprintSpawner : MonoBehaviour
         else
         {
             position = _leftFoot.position;
+            var scale = footprint.transform.localScale;
+            scale.x *= -1;
+            footprint.transform.localScale = scale;
         }
         position.y = _spawnHeight;
         footprint.transform.position = position;
         Vector3 rotation = new Vector3();
         rotation.y = Mathf.Atan2(movementDirection.x, movementDirection.y) * Mathf.Rad2Deg;
+        _feetHolder.localEulerAngles = rotation;
         rotation.y += Random.Range(-_angleRange / 2, _angleRange / 2);
         footprint.transform.eulerAngles = rotation;
         _isRight = !_isRight;

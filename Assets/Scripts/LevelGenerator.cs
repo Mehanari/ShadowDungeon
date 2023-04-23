@@ -1,3 +1,4 @@
+using UnityEditor.AI;
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
@@ -16,6 +17,7 @@ public class LevelGenerator : MonoBehaviour
         CreateDoors();
         CreateVerticalWalls();
         CreateHorizontalWalls();
+        NavMeshBuilder.BuildNavMesh();
     }
 
     private void GeneratePositions()
