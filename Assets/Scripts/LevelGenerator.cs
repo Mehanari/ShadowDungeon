@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [SerializeField] private Room _roomPrefab;
+    [SerializeField] private RoomsConfig _roomsConfig;
     [SerializeField] private float _roomLength;
     [SerializeField] private int _gameFieldSize;
     private Vector3[,] _roomsPositions;
@@ -38,7 +38,21 @@ public class LevelGenerator : MonoBehaviour
         {
             for (int j = 0; j < _gameFieldSize; j++)
             {
-                _rooms[i,j] = Instantiate(_roomPrefab.gameObject, _roomsPositions[i,j], Quaternion.identity).GetComponent<Room>();
+                Room roomPrefab;
+                if (i == 0 && j == 0)
+                {
+                    roomPrefab = _roomsConfig.StartRoom;
+                }
+                else if (i == _gameFieldSize-1 && j == _gameFieldSize-1)
+                {
+                    roomPrefab = _roomsConfig.EndRoom;
+                }
+                else
+                {
+                    int roomIndex = Random.Range(0, _roomsConfig.Rooms.Count - 1);
+                    roomPrefab = _roomsConfig.Rooms[roomIndex];
+                }
+                _rooms[i,j] = Instantiate(roomPrefab.gameObject, _roomsPositions[i,j], Quaternion.identity).GetComponent<Room>();
             }
         }
     }

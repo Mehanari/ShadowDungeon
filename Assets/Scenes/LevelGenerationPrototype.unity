@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b9f497538c31f40893d75d0d0f10fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _roomPrefab: {fileID: 320939613315595049, guid: 330b62105056d544eaa873b3f35a414b, type: 3}
+  _roomsConfig: {fileID: 11400000, guid: 41356981c0371da4cada9098cadaca12, type: 2}
   _roomLength: 27
   _gameFieldSize: 4
 --- !u!4 &1012604752
