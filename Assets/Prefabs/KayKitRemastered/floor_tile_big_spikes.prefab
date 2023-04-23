@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 4185033511901600157}
   - component: {fileID: 989633423810172472}
   - component: {fileID: 3053182243294929650}
+  - component: {fileID: 8488370897837649236}
   m_Layer: 0
   m_Name: floor_tile_big_spikes
   m_TagString: Untagged
@@ -115,7 +116,7 @@ Transform:
   m_Children:
   - {fileID: 1463570799687824291}
   m_Father: {fileID: 0}
-  m_RootOrder: 99
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &989633423810172472
 MeshFilter:
@@ -167,3 +168,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8488370897837649236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3557818841263260455}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 2.2724643, z: 4}
+  m_Center: {x: 0, y: 1.036232, z: 6.082374e-15}
