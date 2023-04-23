@@ -9,6 +9,7 @@ public class Level : MonoBehaviour
     private Vector3[,] _roomsPositions;
     private Room[,] _rooms;
 
+    public Vector3[,] RoomsPositions => _roomsPositions;
     public static Level Instance;
 
     private void Awake()
@@ -71,7 +72,7 @@ public class Level : MonoBehaviour
                 }
                 else
                 {
-                    int roomIndex = Random.Range(0, _roomsConfig.Rooms.Count - 1);
+                    int roomIndex = Random.Range(0, _roomsConfig.Rooms.Count);
                     roomPrefab = _roomsConfig.Rooms[roomIndex];
                 }
                 _rooms[i,j] = Instantiate(roomPrefab.gameObject, _roomsPositions[i,j], Quaternion.identity).GetComponent<Room>();

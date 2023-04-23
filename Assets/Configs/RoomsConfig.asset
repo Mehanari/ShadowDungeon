@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299a39fdcc4c70f4fb57fb3c0d7c1dcf, type: 3}
   m_Name: RoomsConfig
   m_EditorClassIdentifier: 
-  Rooms:
-  - {fileID: 320939613315595049, guid: 330b62105056d544eaa873b3f35a414b, type: 3}
-  StartRoom: {fileID: 320939613315595049, guid: 330b62105056d544eaa873b3f35a414b, type: 3}
-  EndRoom: {fileID: 320939613315595049, guid: 330b62105056d544eaa873b3f35a414b, type: 3}
+  Rooms: []
+  StartRoom: {fileID: 0}
+  EndRoom: {fileID: 0}

@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/ScriptsTesting/MakingPrefabs.meta
 guid: 75cc3b1416fac864ea017c001a7ffcff
 folderAsset: yes
 DefaultImporter:
+========
+guid: d8ba23ebf9308cb4ca6e6b89a87b5fe1
+PrefabImporter:
+>>>>>>>> origin/design:Assets/Prefabs/Rooms/Room_4x4_cross_room.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
