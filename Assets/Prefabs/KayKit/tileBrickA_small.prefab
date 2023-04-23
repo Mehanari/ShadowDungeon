@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6372275014958575556}
   - component: {fileID: 8052723965329465441}
   - component: {fileID: 5198827984654177451}
+  - component: {fileID: 2531484944280089273}
   m_Layer: 0
   m_Name: tileBrickA_small
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 150
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8052723965329465441
 MeshFilter:
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2531484944280089273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5991211311277782398}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.05, y: 1.06, z: 2.05}
+  m_Center: {x: 0, y: 0.53, z: 0}
