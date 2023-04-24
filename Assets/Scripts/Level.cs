@@ -1,4 +1,4 @@
-using UnityEditor.AI;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -6,6 +6,7 @@ public class Level : MonoBehaviour
     [SerializeField] private RoomsConfig _roomsConfig;
     [SerializeField] private float _roomLength;
     [SerializeField] private int _gameFieldSize;
+    [SerializeField] NavMeshSurface _navMeshSurface;
     private Vector3[,] _roomsPositions;
     private Room[,] _rooms;
 
@@ -23,8 +24,7 @@ public class Level : MonoBehaviour
             Destroy(this.gameObject);
         }
         GenerateLevel();
-        NavMeshBuilder.ClearAllNavMeshes();
-        NavMeshBuilder.BuildNavMesh();
+        _navMeshSurface.BuildNavMesh();
     }
 
     private void GenerateLevel()

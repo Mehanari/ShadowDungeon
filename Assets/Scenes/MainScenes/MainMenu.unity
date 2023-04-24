@@ -693,6 +693,7 @@ GameObject:
   - component: {fileID: 943781131}
   - component: {fileID: 943781130}
   - component: {fileID: 943781129}
+  - component: {fileID: 943781132}
   m_Layer: 5
   m_Name: LeaderBoard
   m_TagString: Untagged
@@ -764,7 +765,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 943781130}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 943781132}
+        m_TargetAssemblyTypeName: LoadSceneComponent, Assembly-CSharp
+        m_MethodName: GoToScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &943781130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +816,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943781127}
   m_CullTransparentMesh: 1
+--- !u!114 &943781132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943781127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90de066bb552c594bb4609a8bd5dce25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: Leaderboard
 --- !u!1 &951537081
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,50 +964,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951537081}
   m_CullTransparentMesh: 1
---- !u!1 &1738812843
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1738812846}
-  - component: {fileID: 1738812845}
-  m_Layer: 0
-  m_Name: Player manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1738812845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1738812843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a8ee839c4568a42bf8ed6a516a670d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1738812846
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1738812843}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1025.2994, y: 444.20374, z: -828.4499}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1858645129
 GameObject:
   m_ObjectHideFlags: 0
