@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reachThreshold: 10
-  _playerChaseSpeed: 6
+  _playerChaseSpeed: 8
   _normalSpeed: 3
 --- !u!114 &1026833021788606418
 MonoBehaviour:
@@ -272,6 +272,9 @@ MonoBehaviour:
   _angleRange: 10
   _spawnPeriod: 1.5
   _isRight: 0
+  _onStepSpawned:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3103104773980938714
 GameObject:
   m_ObjectHideFlags: 0
