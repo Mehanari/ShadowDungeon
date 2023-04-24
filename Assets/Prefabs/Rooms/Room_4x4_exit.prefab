@@ -3818,6 +3818,9 @@ GameObject:
   - component: {fileID: 3126380128809903726}
   - component: {fileID: 3501510592903068983}
   - component: {fileID: 1038921628673561033}
+  - component: {fileID: 3132116726426154440}
+  - component: {fileID: 985323878280933724}
+  - component: {fileID: 2044895053534499865}
   m_Layer: 0
   m_Name: Trapdoor_opened
   m_TagString: Untagged
@@ -3892,6 +3895,61 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3132116726426154440
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3854077972018651189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0194112, y: 0.021324841, z: 0.026622469}
+  m_Center: {x: -0.000012554526, y: 0.010662419, z: -0.0063800556}
+--- !u!114 &985323878280933724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3854077972018651189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90de066bb552c594bb4609a8bd5dce25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: Game
+--- !u!114 &2044895053534499865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3854077972018651189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b83f67f836ec04ca5138c9e8481a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tags:
+  - Player
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 985323878280933724}
+        m_TargetAssemblyTypeName: LoadSceneComponent, Assembly-CSharp
+        m_MethodName: GoToScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4126237630907488606
 GameObject:
   m_ObjectHideFlags: 0
@@ -6246,6 +6304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bca4f9bb4687e438ec3ce527738173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _content: {fileID: 4581974120958776678}
   _entranceOpened: {fileID: 4570536574189763999, guid: 17c4b6d47b9f8c44997ff9e63dd7e72d, type: 3}
   _entranceClosed: {fileID: 5701275201565057356, guid: 24210785c8109a040b402cb044d2703e, type: 3}
   _north:

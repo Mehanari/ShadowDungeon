@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FootprintSpawner : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class FootprintSpawner : MonoBehaviour
     [SerializeField] private float _angleRange;
     [SerializeField] private float _spawnPeriod;
     [SerializeField] bool _isRight;
+    [SerializeField] private UnityEvent _onStepSpawned;
     private Queue<GameObject> _footprintsQueue = new Queue<GameObject>();
     private float _elapsedDistance;
     private Vector2 _previousPosition = Vector2.zero;
@@ -50,6 +52,7 @@ public class FootprintSpawner : MonoBehaviour
         footprint.SetActive(true);
         _footprintsQueue.Enqueue(footprint);
         PlaceFootprint(footprint, movementDirection);
+        _onStepSpawned?.Invoke();
     }
 
     private void PlaceFootprint(GameObject footprint, Vector2 movementDirection)

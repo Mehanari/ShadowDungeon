@@ -3,7 +3,7 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerInputReader : MonoBehaviour
 {
-    [SerializeField] private Hero _hero;
+    [SerializeField] private Player _hero;
 
     public void OnMovement(CallbackContext context)
     {

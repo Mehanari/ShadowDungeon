@@ -22,11 +22,9 @@ public class Level : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
-
-    private void Start()
-    {
         GenerateLevel();
+        NavMeshBuilder.ClearAllNavMeshes();
+        NavMeshBuilder.BuildNavMesh();
     }
 
     private void GenerateLevel()
@@ -37,8 +35,18 @@ public class Level : MonoBehaviour
         CreateDoors();
         CreateVerticalWalls();
         CreateHorizontalWalls();
-        NavMeshBuilder.ClearAllNavMeshes();
-        NavMeshBuilder.BuildNavMesh();
+        RotateRoomsContent();
+    }
+
+    private void RotateRoomsContent()
+    {
+        for (int i = 0; i < _gameFieldSize; i++)
+        {
+            for (int j = 0; j < _gameFieldSize; j++)
+            {
+                _rooms[i, j].RotateContent(90 * Random.Range(0, 4));
+            }
+        }
     }
 
     private void GeneratePositions()
@@ -158,7 +166,6 @@ public class Level : MonoBehaviour
                     continue;
                 }
             }
-
         }
     }
 

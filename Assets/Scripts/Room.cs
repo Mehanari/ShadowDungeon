@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
+    [SerializeField] private GameObject _content;
     [Header("Component prefabs")]
     [SerializeField] private GameObject _entranceOpened;
     [SerializeField] private GameObject _entranceClosed;
@@ -14,6 +15,13 @@ public class Room : MonoBehaviour
     public Entrance South => _south;
     public Entrance East => _east;
     public Entrance West => _west;
+
+    public void RotateContent(int degrees)
+    {
+        var rotation = _content.transform.eulerAngles;
+        rotation.y = degrees;
+        _content.transform.eulerAngles = rotation;
+    }
 
     public bool HasThreeExits()
     {
