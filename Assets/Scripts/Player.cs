@@ -14,9 +14,11 @@ public class Player : Creature
     [SerializeField] private float _soundZoneResizeSpeed = 0.4f;
     [SerializeField] private float _maxOxygen;
     [SerializeField] private float _oxygenChangeSpeed;
+    [SerializeField] private float _heldBreathSpeed;
     public float Oxygen => _currentOxygen;
     private bool _breathHeld = false;
     private float _currentOxygen;
+    private float _maxSpeed;
 
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class Player : Creature
             Destroy(this.gameObject);
         }
         _currentOxygen = _maxOxygen;
+        _maxSpeed = _speed;
     }
 
     public void Lose()
@@ -77,10 +80,12 @@ public class Player : Creature
     public void HoldBreath() 
     {
         _breathHeld = true;
+        _speed = _heldBreathSpeed;
     }
 
     public void ReleaseBreath()
     {
         _breathHeld = false;
+        _speed = _maxSpeed;
     }
 }

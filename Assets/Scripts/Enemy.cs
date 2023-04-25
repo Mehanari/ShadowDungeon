@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _reachThreshold;
     [SerializeField] private float _playerChaseSpeed;
     [SerializeField] private float _normalSpeed;
+    [SerializeField] private UnityEvent _onNoticePlayer;
     private Transform _playerTransform;
     private NavMeshAgent _navMesh;
     private bool _hearPlayer;

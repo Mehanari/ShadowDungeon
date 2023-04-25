@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 3103104773382329491}
   - component: {fileID: 3103104773382329490}
   - component: {fileID: 1026833021788606418}
+  - component: {fileID: 5198103699282358604}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -188,6 +189,21 @@ MonoBehaviour:
   _reachThreshold: 10
   _playerChaseSpeed: 8
   _normalSpeed: 3
+  _onNoticePlayer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5198103699282358604}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1026833021788606418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +233,111 @@ MonoBehaviour:
         m_CallState: 2
   _probabilityValue: 50
   _invokeOnAwake: 1
+--- !u!82 &5198103699282358604
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103104773382329497}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2e4c478d3ff5f9c48bbf99910c9899f0, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 30
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.029514823
+      value: 1
+      inSlope: -2.261635
+      outSlope: -2.261635
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.22549425
+    - serializedVersion: 3
+      time: 0.48724318
+      value: 0.3312141
+      inSlope: -0.6792142
+      outSlope: -0.6792142
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2965731
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.5500897
+      outSlope: -0.5500897
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.45070127
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.0027777778
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3103104773542026623
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +395,19 @@ MonoBehaviour:
   _isRight: 0
   _onStepSpawned:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7355204822333247908}
+        m_TargetAssemblyTypeName: RandomSoundPlayer, Assembly-CSharp
+        m_MethodName: PlayRandomSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3103104773980938714
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7930815015274089149}
   - component: {fileID: 9016854284088002086}
+  - component: {fileID: 7355204822333247908}
   m_Layer: 0
   m_Name: FootstepsSound
   m_TagString: Untagged
@@ -383,7 +517,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -392,9 +526,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 30
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -402,23 +536,32 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.029514823
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -2.261635
+      outSlope: -2.261635
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0.22549425
+    - serializedVersion: 3
+      time: 0.48724318
+      value: 0.3312141
+      inSlope: -0.6792142
+      outSlope: -0.6792142
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2965731
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.5500897
+      outSlope: -0.5500897
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.45070127
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -427,7 +570,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -442,7 +585,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.0027777778
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -467,3 +610,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7355204822333247908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623770324120409196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a6281adf1403b41b3bb186d1b4b4df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: 00fd2c8cff825e842aed47fcaa0f0b35, type: 3}
+  - {fileID: 8300000, guid: 48e34f92ce174ee48910c10e20e806bb, type: 3}
+  - {fileID: 8300000, guid: 87252ee5b02715f4488bdabef2d6a3fb, type: 3}
+  - {fileID: 8300000, guid: c7709b8ca030ebd45a7d6a9de1152b1d, type: 3}
+  _source: {fileID: 9016854284088002086}
